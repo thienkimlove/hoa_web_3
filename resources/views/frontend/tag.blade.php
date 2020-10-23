@@ -1,61 +1,40 @@
 @extends('frontend.layout')
 
 @section('content')
-    <section class="section vis">
-        <div class="container">
-            <div class="contentLeft">
-                <ul class="breadCrumb clearFix">
-                    <li><a href="{{ url('/') }}">Trang chủ</a></li>
-                    <li class="active">Từ khóa {{ $tag->name }}</li>
-                </ul>
-                <div class="boxNews clearFix">
-                    <h3 class="globalTitle">
-                        <a href="{{ url('tag/'.$tag->slug) }}">Từ khóa {{ $tag->name }}</a>
-                    </h3>
-                    @if ($firstPost = $posts->shift())
-                        <div class="topNews clearFix">
-                            <a href="{{ url($firstPost->slug.'.html') }}" class="thumb">
-                                <img src="{{ \App\Helpers::getImageUrlBySize($firstPost->image, 400, 289) }}" alt="">
-                            </a>
-                            <h3>
-                                <a href="{{ url($firstPost->slug.'.html') }}">
-                                    {{ $firstPost->name }}
+    <section class="body pr">
+        <div class="fixCen">
+            <div class="groups">
+                <div class="left-content">
+                    <div class="steps">
+                        <h2 class="rs"><a href="{{ url('/') }}" title="Trang chủ">Trang chủ</a></h2>
+                        <span>|</span>
+                        <h3 class="rs"><a href="{{ url('/tag/'.$tag->slug) }}" title="{{ $tag->name }}">Từ khóa {{ $tag->name }}</a></h3>
+                    </div>
+                    <div class="list-news">
+                        @foreach ($posts as $post)
+                        <div class="news">
+                            <div class="post post-news">
+                                <a href="{{ url($post->slug.'.html') }}" title="{{ $post->name }}" class="img-title">
+                                    <img src="{{ url(\App\Helpers::getImageUrlBySize($post->image, 276, 157)) }}" alt="" width="276" height="157">
                                 </a>
-                            </h3>
-                            <p>
-                                {{ $firstPost->desc }}
-                            </p>
-                        </div>
-                    @endif
-                    @if ($posts->count() > 0)
-                        <div class="listNews fullWidth">
-                            @foreach ($posts as $post)
-                                <div class="item clearFix">
-                                    <a href="{{ url($post->slug.'.html') }}" class="thumb">
-                                        <img src="{{ \App\Helpers::getImageUrlBySize($post->image, 320, 180) }}" alt="List news" width="320" height="180">
+                                <div class="right">
+                                    <a href="{{ url($post->slug.'.html') }}" class="title" title="{{ $post->name }}">
+                                        {{ $post->name }}
                                     </a>
-                                    <h3><a href="{{ url($post->slug.'.html') }}">{{ $post->name }}</a></h3>
-                                    <span class="date">{{ $post->updated_at->format('d/m/Y')  }}</span> | <span class="tag">
-                                        @foreach ($post->tags as $tag)
-                                            <a href="{{url('tag/'.$tag->slug)}}">{{ $tag->name }}</a>,
-                                        @endforeach
-                                    </span>
-                                    <p>
-                                       {{ $post->desc }}
-                                    </p>
-                                    <a href="{{ url($post->slug.'.html') }}" class="readMore">Chi tiết</a>
+                                    <div class="sumary">
+                                        {{ \Illuminate\Support\Str::limit($post->desc, 200)  }}
+                                    </div>
+                                    <a href="{{ url($post->slug.'.html') }}" class="view-detail" title="Xem chi tiết">Xem chi tiết >></a>
                                 </div>
-                            @endforeach
-                            <!-- /paging -->
-                            <div class="boxPaging">
-                                @include('frontend.pagination', ['paginate' => $posts])
                             </div>
                         </div>
-                    @endif
+                        @endforeach
+                    </div>
+
+                    @include('frontend.pagination', ['paginate' => $posts])
                 </div>
-                <!-- /endboxNews -->
+                @include('frontend.right')
             </div>
-            @include('frontend.right')
         </div>
     </section>
 @endsection

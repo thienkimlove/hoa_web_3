@@ -120,7 +120,21 @@ class PostCrudController extends CrudController
         CRUD::field('name')->label('Tiêu đề bài viết');
 
         CRUD::addField(['name' => 'desc', 'type' => 'textarea', 'label' => 'Mô tả']);
-        CRUD::addField(['name' => 'content', 'type' => 'ckeditor', 'label' => 'Nội dung']);
+        CRUD::addField(
+            [   // CKEditor
+                'name'          => 'content',
+                'label'         => 'Nội dung',
+                'type'          => 'ckeditor',
+
+                // optional:
+                'extra_plugins' => ['justify', 'font'],
+                'options'       => [
+                    'autoGrow_minHeight'   => 200,
+                    'autoGrow_bottomSpace' => 50,
+                    //'removePlugins'        => 'resize,maximize',
+                ]
+            ]
+        );
         CRUD::addField(['name' => 'image', 'type' => 'browse', 'label' => 'Image']);
 
         CRUD::addField([

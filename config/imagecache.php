@@ -123,6 +123,21 @@ return [
         '310x530' => function($image) {
             return $image->fit(310, 530);
         },
+        '507x310' => function($image) {
+            return $image->fit(507, 310);
+        },
+        '226x148' => function($image) {
+            return $image->fit(226, 148);
+        },
+        '301x183' => function($image) {
+            return $image->fit(301, 183);
+        },
+        '126x90' => function($image) {
+            return $image->fit(126, 90);
+        },
+        '276x157' => function($image) {
+            return $image->fit(276, 157);
+        },
     ],
 
     /*

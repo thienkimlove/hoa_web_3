@@ -21,7 +21,7 @@ class Helpers
             'key'         => 'meta_index_title',
             'name'        => 'Meta Index Title',
             'description' => 'For SEO',
-            'value'       => 'suckhoe248.com',
+            'value'       => 'meohay248.com',
             'field'       => '{"name":"value","label":"Value","type":"text"}', //text, textarea
             'active'      => 1,
         ],
@@ -29,7 +29,7 @@ class Helpers
             'key'         => 'meta_index_desc',
             'name'        => 'Meta Index Description',
             'description' => 'For SEO',
-            'value'       => 'suckhoe248.com',
+            'value'       => 'meohay248.com',
             'field'       => '{"name":"value","label":"Value","type":"textarea"}', //text, textarea
             'active'      => 1,
         ],
@@ -37,7 +37,7 @@ class Helpers
             'key'         => 'meta_index_keywords',
             'name'        => 'Meta Index Keywords',
             'description' => 'For SEO',
-            'value'       => 'suckhoe248.com',
+            'value'       => 'meohay248.com',
             'field'       => '{"name":"value","label":"Value","type":"text"}', //text, textarea
             'active'      => 1,
         ],
@@ -45,7 +45,7 @@ class Helpers
             'key'         => 'meta_contact_title',
             'name'        => 'Meta Contact Title',
             'description' => 'For SEO',
-            'value'       => 'suckhoe248.com',
+            'value'       => 'meohay248.com',
             'field'       => '{"name":"value","label":"Value","type":"text"}', //text, textarea
             'active'      => 1,
         ],
@@ -53,7 +53,7 @@ class Helpers
             'key'         => 'meta_contact_desc',
             'name'        => 'Meta Contact Description',
             'description' => 'For SEO',
-            'value'       => 'suckhoe248.com',
+            'value'       => 'meohay248.com',
             'field'       => '{"name":"value","label":"Value","type":"textarea"}', //text, textarea
             'active'      => 1,
         ],
@@ -61,7 +61,7 @@ class Helpers
             'key'         => 'meta_contact_keywords',
             'name'        => 'Meta Contact Keywords',
             'description' => 'For SEO',
-            'value'       => 'suckhoe248.com',
+            'value'       => 'meohay248.com',
             'field'       => '{"name":"value","label":"Value","type":"text"}', //text, textarea
             'active'      => 1,
         ],
@@ -70,7 +70,7 @@ class Helpers
             'key'         => 'meta_video_title',
             'name'        => 'Meta Video Title',
             'description' => 'For SEO',
-            'value'       => 'suckhoe248.com',
+            'value'       => 'meohay248.com',
             'field'       => '{"name":"value","label":"Value","type":"text"}', //text, textarea
             'active'      => 1,
         ],
@@ -78,7 +78,7 @@ class Helpers
             'key'         => 'meta_video_desc',
             'name'        => 'Meta Video Description',
             'description' => 'For SEO',
-            'value'       => 'suckhoe248.com',
+            'value'       => 'meohay248.com',
             'field'       => '{"name":"value","label":"Value","type":"textarea"}', //text, textarea
             'active'      => 1,
         ],
@@ -86,52 +86,27 @@ class Helpers
             'key'         => 'meta_video_keywords',
             'name'        => 'Meta Video Keywords',
             'description' => 'For SEO',
-            'value'       => 'suckhoe248.com',
+            'value'       => 'meohay248.com',
             'field'       => '{"name":"value","label":"Value","type":"text"}', //text, textarea
             'active'      => 1,
         ],
 
-        [
-            'key'         => 'company_copyright',
-            'name'        => 'Copy Right',
-            'description' => 'For SEO',
-            'value'       => 'MỌI THÔNG TIN ĐỀU BẢN QUYỀN ĐỀU THUỘC VỀ suckhoe248.com',
-            'field'       => '{"name":"value","label":"Value","type":"text"}', //text, textarea
-            'active'      => 1,
-        ],
-
-        [
-            'key'         => 'company_contact',
-            'name'        => 'Copy Right',
-            'description' => 'For SEO',
-            'value'       => 'Tầng 5, Tòa nhà 29 T1 - Hoàng Đạo Thúy - Trung Hòa - Cầu Giấy - Hà Nội- Điện thoại: (04) 62824344 - Fax: 04.62824263',
-            'field'       => '{"name":"value","label":"Value","type":"text"}', //text, textarea
-            'active'      => 1,
-        ],
 
         [
             'key'         => 'website_logo_pc',
-            'name'        => 'Website Logo Pc',
-            'description' => 'For SEO',
+            'name'        => 'Website Logo',
+            'description' => 'For SEO (Size 276x78)',
             'value'       => 'uploads/logo.png',
             'field'       => '{"name":"value","label":"Value","type":"browse"}', //text, textarea
             'active'      => 1,
         ],
 
-        [
-            'key'         => 'website_logo_sp',
-            'name'        => 'Website Logo Mobile',
-            'description' => 'For SEO',
-            'value'       => 'uploads/logosp.png',
-            'field'       => '{"name":"value","label":"Value","type":"browse"}', //text, textarea
-            'active'      => 1,
-        ],
 
         [
             'key'         => 'facebook_app_id',
             'name'        => 'Facebook App ID',
             'description' => 'For SEO',
-            'value'       => '188252524956805',
+            'value'       => '',
             'field'       => '{"name":"value","label":"Value","type":"text"}', //text, textarea
             'active'      => 1,
         ],
@@ -139,7 +114,7 @@ class Helpers
             'key'         => 'website_name',
             'name'        => 'Website Name',
             'description' => 'For SEO',
-            'value'       => 'Suckhoe248.com',
+            'value'       => 'meohay248.com',
             'field'       => '{"name":"value","label":"Value","type":"text"}', //text, textarea
             'active'      => 1,
         ],
@@ -169,12 +144,37 @@ class Helpers
             'active'      => 1,
         ],
 
+        [
+            'key'         => 'facebook_link',
+            'name'        => 'Facebook Link',
+            'description' => 'For SEO',
+            'value'       => '#',
+            'field'       => '{"name":"value","label":"Value","type":"text"}', //text, textarea
+            'active'      => 1,
+        ],
+        [
+            'key'         => 'analytics',
+            'name'        => 'Analytics Code',
+            'description' => 'For SEO',
+            'value'       => '',
+            'field'       => '{"name":"value","label":"Value","type":"textarea"}', //text, textarea
+            'active'      => 1,
+        ],
+        [
+            'key'         => 'webmaster',
+            'name'        => 'Webmaster Code',
+            'description' => 'For SEO',
+            'value'       => '',
+            'field'       => '{"name":"value","label":"Value","type":"textarea"}', //text, textarea
+            'active'      => 1,
+        ],
+
 
     ];
 
     public static function getMainCategories()
     {
-        return Category::whereNull('parent_id')->get();
+        return Category::where('status', true)->whereNull('parent_id')->get();
     }
 
     public static function getContactStatuses()
@@ -223,12 +223,12 @@ class Helpers
             ->get();
     }
 
-    public static function getFocusIndexPosts()
+    public static function getFocusIndexPosts($limit=5)
     {
         return Post::where('status', true)
             ->where('is_focus_index', true)
             ->latest('created_at')
-            ->limit(6)
+            ->limit($limit)
             ->get();
     }
 
@@ -249,6 +249,39 @@ class Helpers
     public static function configGet($key)
     {
         return Setting::get($key);
+    }
+
+    public static function getMainCategoryHavePosts($limit = 5)
+    {
+        $categories = Category::where('status', true)->whereNull('parent_id')->limit($limit)->get();
+
+        $results = [];
+
+        foreach ($categories as $category) {
+            $posts = self::getCategoryPosts($category);
+
+            if ($posts->count() > 0) {
+                $results[] = $category;
+            }
+        }
+        return $results;
+    }
+
+    public static function getCategoryPosts($category, $limit=3)
+    {
+        $cateIds = ($category->children->count() > 0) ? $category->children->pluck('id')->all() : [$category->id];
+
+        return Post::publish()
+            ->whereIn('category_id', $cateIds)
+            ->latest('updated_at')
+            ->limit($limit)
+            ->get();
+    }
+
+    public static function truncateWords($string, $width, $etc = ' ..')
+    {
+        $wrapped = explode('$trun$', wordwrap($string, $width, '$trun$', false), 2);
+        return $wrapped[0] . (isset($wrapped[1]) ? $etc : '');
     }
 
 }

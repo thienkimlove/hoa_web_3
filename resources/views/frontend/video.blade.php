@@ -1,45 +1,41 @@
 @extends('frontend.layout')
 
 @section('content')
-    <section class="section vis">
-        <div class="container">
-            <div class="contentLeft">
-                <ul class="breadCrumb clearFix">
-                    <li><a href="{{ url('/') }}">Trang chủ</a></li>
-                    <li class="active">Video</li>
-                </ul>
-                <div class="boxMedia">
-                    <h3 class="globalTitle">
-                        <a href="{{ url('video') }}">Video</a>
-                    </h3>
-                    @if ($mainVideo)
-                        <div class="hotVideo clearFix">
-                            <div class="thumbVideo">
-                                {!! \App\Helpers::getEmberCodeYoutube($mainVideo->link, '100%', 315) !!}
-                            </div>
-                        </div>
-                    @endif
-                    @foreach ($videos as $video)
-                        <article class="item">
-                            <a class="thumb" href="{{ url('video/'.$video->slug) }}" title="">
-                                <img src="{{ \App\Helpers::getYoutubeImage($video->link) }}" width="303" height="130" alt=""/>
-                            </a>
-                            <h3>
-                                <a href="{{ url('video/'.$video->slug) }}" title="">{{ $video->name }}</a>
-                            </h3>
-                        </article>
-                    @endforeach
-
-                    <!-- /paging -->
-                    <div class="boxPaging">
-                        @include('frontend.pagination', ['paginate' => $videos])
-                        <div class="clear"></div>
+    <section class="body pr">
+        <div class="fixCen">
+            <div class="groups">
+                <div class="left-content">
+                    <div class="steps">
+                        <h2 class="rs">
+                            <a href="{{ url('/') }}" title="Trang chủ">Trang chủ</a>
+                        </h2>
+                        <span>|</span>
+                        <h3 class="rs"><a href="{{ url('video') }}" title="Video">Video</a></h3>
                     </div>
-                    <div class="clear"></div>
-                </div><!--//box-media-->
-                <!-- /endboxNews -->
+                    <div class="video-content">
+                        @if ($mainVideo)
+                        <div class="video" id="bigVideo">
+                            < {!! \App\Helpers::getEmberCodeYoutube($mainVideo->link, 720, 425) !!}
+
+                        </div>
+                        @endif
+                        @if ($videos)
+                        <div class="thumb-video">
+                            @foreach ($videos as $video)
+                            <a href="{{ url('video', $video->slug)  }}" title="{{ $video->name }}">
+                                <img src="{{ \App\Helpers::getYoutubeImage($video->link) }}" alt="{{ $video->name }}" width="190" height="129" class="imgFull">
+                                <span class="title">{{ $video->name }}</span>
+                            </a>
+                            @endforeach
+                        </div>
+                        @endif
+
+                        @include('frontend.pagination', ['paginate' => $videos])
+                    </div>
+                </div>
+                @include('frontend.right')
             </div>
-            @include('frontend.right')
         </div>
+
     </section>
 @endsection

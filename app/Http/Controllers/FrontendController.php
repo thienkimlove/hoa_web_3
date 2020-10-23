@@ -45,7 +45,8 @@ class FrontendController extends Controller
                     $q->where('id', $tag->id);
                 })
                 ->orderBy('updated_at', 'desc')
-                ->paginate(10);
+                ->paginate(10, ['*'], 'p');
+
 
             $meta['meta_title'] = $meta_title;
             $meta['meta_desc'] = $meta_desc;
@@ -64,9 +65,11 @@ class FrontendController extends Controller
         $page = 'search';
         if ($request->filled('q')) {
 
-
             $keyword = $request->get('q');
-            $posts = Post::publish()->where('name', 'LIKE', '%' . $keyword . '%')->paginate(10);
+            $posts = Post::publish()
+                ->where('name', 'LIKE', '%' . $keyword . '%')
+                ->paginate(10, ['*'], 'p');
+            $posts->withPath('search?q='.$keyword);
 
             $meta = [];
             $meta['meta_title'] = 'Tìm kiếm cho từ khóa ' . $keyword;
@@ -94,7 +97,7 @@ class FrontendController extends Controller
         $meta['meta_url'] = route('frontend.video');
 
         $mainVideo = null;
-        $videos = Video::latest('updated_at')->paginate(12);
+        $videos = Video::latest('updated_at')->paginate(12, ['*'], 'p');
         $latestVideos = Video::latest('updated_at')->limit(5)->get();
         if ($videos->count() > 0) {
             $mainVideo = $videos->first();
@@ -208,7 +211,7 @@ class FrontendController extends Controller
                 $posts = Post::publish()
                     ->whereIn('category_id', $cateIds)
                     ->latest('updated_at')
-                    ->paginate(10);
+                    ->paginate(10, ['*'], 'p');
 
                 $page = $category->slug;
 
@@ -250,7 +253,7 @@ class FrontendController extends Controller
 
     public function siteMapsCategories()
     {
-        $contents = Category::all();
+        $contents = Category::where('status', true)->get();
         foreach ($contents as $content) {
             Sitemap::addTag(url($content->slug), $content->updated_at, 'weekly', '0.4');
         }
