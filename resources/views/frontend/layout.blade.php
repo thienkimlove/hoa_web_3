@@ -114,7 +114,6 @@
     </footer>
 
 </div>
-</body>
 <script src="/frontend/js/jquery-1.11.1.min.js" type="text/javascript"></script>
 <script src="/frontend/js/SmoothScroll.js" type="text/javascript"></script>
 <script src="/frontend/js/owl.carousel.min.js" type="text/javascript"></script>
@@ -122,4 +121,6 @@
 <script src="/frontend/js/common.js" type="text/javascript"></script>
 @yield('after_scripts')
 
+{!! \App\Helpers::configGet('endpage') !!}
+</body>
 </html>

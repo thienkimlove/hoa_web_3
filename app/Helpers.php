@@ -169,6 +169,15 @@ class Helpers
             'active'      => 1,
         ],
 
+        [
+            'key'         => 'endpage',
+            'name'        => 'End Page HTML',
+            'description' => 'For SEO',
+            'value'       => '',
+            'field'       => '{"name":"value","label":"Value","type":"textarea"}', //text, textarea
+            'active'      => 1,
+        ],
+
 
     ];
 
